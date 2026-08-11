@@ -29,21 +29,21 @@
       position: relative;
     }
 
-    /* Container SĐT trôi tự do */
+    /* Khung chứa các SĐT trôi nổi */
     #floating-icons-container {
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
-      pointer-events: none;
-      z-index: 0;
+      pointer-events: none; /* Không cản trở bấm nút */
+      z-index: 1; /* NẰM TRÊN PHÁO HOA */
     }
 
-    /* SĐT CẦU VỒNG GLOW */
+    /* ĐỊNH DẠNG SĐT CẦU VỒNG LÒE LOẸT */
     .floating-phone {
       position: absolute;
       font-weight: 900;
       font-size: 20px;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       white-space: nowrap;
       user-select: none;
       will-change: transform;
@@ -52,7 +52,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: rainbowGlow 3s ease infinite;
-      filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.6));
+      filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.8)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.6));
     }
 
     @keyframes rainbowGlow {
@@ -67,12 +67,12 @@
       top: 0; left: 0;
       width: 100vw; height: 100vh;
       pointer-events: none;
-      z-index: 0;
+      z-index: 0; /* NẰM DƯỚI CÙNG */
     }
 
     .container {
       position: relative;
-      z-index: 1;
+      z-index: 2; /* NẰM TRÊN CÙNG */
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -291,7 +291,7 @@
       outline-offset: 2px;
     }
 
-    /* Trái tim bay */
+    /* Trái tim bay hiệu ứng chuột */
     .heart-particle {
       position: fixed;
       pointer-events: none;
@@ -306,13 +306,14 @@
       100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5) translateY(-60px); }
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 50px;
       color: var(--text-muted);
       font-size: 13px;
-      border-top: 1px solid var(--border-color);
-      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 20px;
     }
   </style>
 </head>
@@ -321,9 +322,10 @@
   <!-- Khung chứa SĐT trôi tự do -->
   <div id="floating-icons-container"></div>
 
-  <!-- Canvas Pháo Hoa -->
+  <!-- Canvas hiển thị Pháo hoa -->
   <canvas id="fireworksCanvas"></canvas>
 
+  <!-- Khung nội dung chính -->
   <div class="container">
     <header class="pro-header">
       <div class="header-logo">
@@ -394,7 +396,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">📺</div>
-            <h3>DL Tivi</h3>
+            <h3>DL Tivi [14]</h3>
           </div>
           <p>Ứng dụng xem truyền hình tổng hợp mượt mà, chuyển kênh nhanh và tương thích tốt với điều khiển TV.</p>
         </div>
@@ -418,7 +420,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">🎮</div>
-            <h3>Get Out</h3>
+            <h3>Get Out [1.0.7]</h3>
           </div>
           <p>Trải nghiệm game giải trí hấp dẫn trực tiếp trên màn hình lớn của Android TV.</p>
         </div>
@@ -442,7 +444,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">👶</div>
-            <h3>Lingokids</h3>
+            <h3>Lingokids 266</h3>
           </div>
           <p>Ứng dụng học tiếng Anh tương tác vui nhộn dành cho trẻ em trên Android TV.</p>
         </div>
@@ -454,7 +456,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">🎙️</div>
-            <h3>Mapvoice</h3>
+            <h3>mapvoice</h3>
           </div>
           <p>Công cụ hỗ trợ điều khiển và tìm kiếm bằng giọng nói tối ưu cho các thiết bị TV.</p>
         </div>
@@ -466,7 +468,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">🛍️</div>
-            <h3>Mstore</h3>
+            <h3>Mstore [2.0.0]</h3>
           </div>
           <p>Kho ứng dụng tổng hợp chuyên biệt dành cho Android TV Box và Smart TV.</p>
         </div>
@@ -502,7 +504,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">🎥</div>
-            <h3>Phim4K</h3>
+            <h3>Phim4K [v1.9.15]</h3>
           </div>
           <p>Ứng dụng xem phim chất lượng siêu nét 4K, thuyết minh và vietsub chuẩn dành cho TV.</p>
         </div>
@@ -526,9 +528,9 @@
         <div>
           <div class="card-header">
             <div class="app-icon">📡</div>
-            <h3>QuânTV</h3>
+            <h3>quantv</h3>
           </div>
-          <p>Xem truyền hình, tạo shotcut ra màn hình trên Laucher.</p>
+          <p>Công cụ hỗ trợ quản lý và tối ưu hóa hệ thống dành riêng cho các thiết bị Android TV.</p>
         </div>
         <a class="btn" href="https://www.dropbox.com/home/file%20new/KhoAppMoi?preview=quantv.apk&dl=1">TẢI VỀ NGAY</a>
       </div>
@@ -574,7 +576,7 @@
         <div>
           <div class="card-header">
             <div class="app-icon">📁</div>
-            <h3>X-plore</h3>
+            <h3>X-plore [PREMIUM]</h3>
           </div>
           <p>Trình quản lý file 2 cửa sổ chuyên nghiệp nhất cho Android TV, hỗ trợ FTP, mượt mà và đầy đủ tính năng.</p>
         </div>
@@ -588,27 +590,29 @@
     </footer>
   </div>
 
-  <!-- SCRIPT SĐT "0972 515 368" TRÔI CẦU VỒNG & NẨY MÉP MÀN HÌNH -->
+  <!-- SCRIPT CƠ CHẾ SĐT "0972 515 368" TRÔI CẦU VỒNG & NẨY MÉP MÀN HÌNH -->
   <script>
     const phoneNumber = '📞 0972 515 368';
     const container = document.getElementById('floating-icons-container');
     const floatingObjects = [];
 
+    // Tạo 10 chữ số điện thoại trôi nổi
     for (let i = 0; i < 10; i++) {
       const el = document.createElement('div');
       el.className = 'floating-phone';
       el.innerText = phoneNumber;
       container.appendChild(el);
 
-      const randomSize = Math.floor(Math.random() * 10) + 18;
+      // Kích thước ngẫu nhiên từ 18px đến 30px
+      const randomSize = Math.floor(Math.random() * 12) + 18;
       el.style.fontSize = randomSize + 'px';
 
       floatingObjects.push({
         element: el,
         x: Math.random() * (window.innerWidth - 200),
         y: Math.random() * (window.innerHeight - 50),
-        vx: (Math.random() - 0.5) * 1.6,
-        vy: (Math.random() - 0.5) * 1.6
+        vx: (Math.random() - 0.5) * 1.6, // Tốc độ trôi ngang
+        vy: (Math.random() - 0.5) * 1.6  // Tốc độ trôi dọc
       });
     }
 
@@ -620,6 +624,7 @@
         obj.x += obj.vx;
         obj.y += obj.vy;
 
+        // Bật lại khi chạm mép màn hình
         if (obj.x <= 0 || obj.x >= w) obj.vx *= -1;
         if (obj.y <= 0 || obj.y >= h) obj.vy *= -1;
 
@@ -631,13 +636,14 @@
     animateFloatingPhones();
   </script>
 
-  <!-- SCRIPT TRÁI TIM BAY KHI DI CHUỘT -->
+  <!-- SCRIPT HIỆU TRÁI TIM BAY KHI DI CHUỘT -->
   <script>
     const heartIcons = ['❤️', '💖', '✨', '💕', '💗'];
     let lastTime = 0;
 
     document.addEventListener('mousemove', function(e) {
       const now = Date.now();
+      // Giới hạn tần suất tạo trái tim để không bị giật lag
       if (now - lastTime < 50) return;
       lastTime = now;
 
@@ -648,11 +654,14 @@
       heart.innerText = heartIcons[Math.floor(Math.random() * heartIcons.length)];
       
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 1200);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1200);
     });
   </script>
 
-  <!-- SCRIPT PHÁO HOA NỀN -->
+  <!-- SCRIPT HIỆU ỨNG PHÁO HOA NỀN -->
   <script>
     const canvas = document.getElementById('fireworksCanvas');
     const ctx = canvas.getContext('2d');
@@ -666,7 +675,9 @@
 
     class Particle {
       constructor(x, y, color) {
-        this.x = x; this.y = y; this.color = color;
+        this.x = x;
+        this.y = y;
+        this.color = color;
         const angle = Math.random() * Math.PI * 2;
         const speed = Math.random() * 4 + 1;
         this.vx = Math.cos(angle) * speed;
@@ -674,11 +685,14 @@
         this.alpha = 1;
         this.decay = Math.random() * 0.015 + 0.008;
       }
+
       update() {
-        this.x += this.vx; this.y += this.vy;
-        this.vy += 0.03;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.03; // Lực hấp dẫn nhẹ
         this.alpha -= this.decay;
       }
+
       draw() {
         ctx.save();
         ctx.globalAlpha = Math.max(this.alpha, 0);
@@ -691,29 +705,39 @@
     }
 
     let particles = [];
-    const colors = ['#00f0ff', '#ff007f', '#7000ff', '#ffe600', '#00ff66'];
+    const colors = ['#00e5ff', '#ff007f', '#7000ff', '#ffe600', '#00ff66'];
 
     function createFirework() {
       const x = Math.random() * canvas.width;
       const y = Math.random() * (canvas.height * 0.6);
       const color = colors[Math.floor(Math.random() * colors.length)];
+      
       for (let i = 0; i < 45; i++) {
         particles.push(new Particle(x, y, color));
       }
     }
 
     function animate() {
+      // Phủ mờ nhẹ tạo hiệu ứng đuôi pháo hoa
       ctx.fillStyle = 'rgba(10, 11, 14, 0.2)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      if (Math.random() < 0.04) createFirework();
+
+      // Tự động bắn pháo hoa ngẫu nhiên
+      if (Math.random() < 0.04) {
+        createFirework();
+      }
 
       for (let i = particles.length - 1; i >= 0; i--) {
         particles[i].update();
         particles[i].draw();
-        if (particles[i].alpha <= 0) particles.splice(i, 1);
+        if (particles[i].alpha <= 0) {
+          particles.splice(i, 1);
+        }
       }
+
       requestAnimationFrame(animate);
     }
+
     animate();
   </script>
 
