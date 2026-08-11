@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHO ƯNG DỤNG TV</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      padding: 20px 15px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    h1 {
+      color: #ff5722;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    p.subtitle {
+      color: #666;
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .card h3 {
+      font-size: 18px;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+      background: #ff5722;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      border-radius: 8px;
+    }
+    .btn:hover, .btn:focus {
+      background: #e64a19;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>KHO ƯNG DỤNG MIỄN PHÍ</h1>
+    <p class="subtitle">Kho ứng dụng xem phim, truyền hình, YouTube chặn quảng cáo cho Android TV</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- App 1: TizenTube Cobalt (Cho TV Sony) -->
+    <div class="card">
+      <div>
+        <h3>YouTube Cobalt (TV Sony)</h3>
+        <p>Bản YouTube Tizen giao diện nhẹ, mượt, chặn quảng cáo dành cho TV Sony / TCL / Mi</p>
+      </div>
+      <a class="btn" href="https://github.com/reisxd/TizenTubeCobalt/releases/download/v2.0.2/cobalt-arm.apk">Tải Về</a>
+    </div>
+
+    <!-- App 2: SmartTube Stable -->
+    <div class="card">
+      <div>
+        <h3>SmartTube Stable</h3>
+        <p>Ứng dụng YouTube chuyên biệt cho Android TV, chặn quảng cáo & tự bỏ qua tài trợ</p>
+      </div>
+      <a class="btn" href="https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk">Tải Về</a>
+    </div>
+
+    <!-- App 3: SmartTube Beta -->
+    <div class="card">
+      <div>
+        <h3>SmartTube Beta</h3>
+        <p>Bản thử nghiệm của SmartTube, cập nhật tính năng mới liên tục hàng tuần</p>
+      </div>
+      <a class="btn" href="https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk">Tải Về</a>
+    </div>
+
+    <!-- App 4: Send Files to TV -->
+    <div class="card">
+      <div>
+        <h3>Send Files to TV (SFTTV)</h3>
+        <p>Ứng dụng nhận file, bắn file APK từ điện thoại sang TV qua mạng Wi-Fi</p>
+      </div>
+      <a class="btn" href="LINK_TAI_O_DAY">Tải Về</a>
+    </div>
+
+    <!-- App 5: Mẫu để anh tự thêm App mới -->
+    <div class="card">
+      <div>
+        <h3>Tên Ứng Dụng Mới</h3>
+        <p>Mô tả ngắn gọn về ứng dụng này...</p>
+      </div>
+      <a class="btn" href="PASTE_LINK_DIRECT_APK_VAO_DAY">Tải Về</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
