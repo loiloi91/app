@@ -77,49 +77,120 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
-    header {
-      margin-bottom: 45px;
+    /* ======= HEADER PRO ENTERPRISE DESIGN ======= */
+    header.pro-header {
+      max-width: 1200px;
+      margin: 0 auto 45px auto;
       text-align: center;
-      padding: 35px 20px;
-      background: linear-gradient(180deg, rgba(20, 24, 38, 0.8) 0%, rgba(10, 11, 14, 0.4) 100%);
-      border: 1px solid var(--border-color);
+      padding: 40px 25px 35px 25px;
+      background: linear-gradient(180deg, rgba(22, 26, 38, 0.85) 0%, rgba(12, 14, 20, 0.6) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 24px;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
       position: relative;
+      overflow: hidden;
     }
 
-    header::after {
+    /* Viền Neon phát sáng ở đáy Header */
+    header.pro-header::after {
       content: '';
       position: absolute;
-      bottom: -1px; left: 15%; right: 15%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+      bottom: 0; left: 10%; right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00f0ff, #7000ff, transparent);
+      box-shadow: 0 0 15px #00f0ff;
     }
 
-    h1 {
-      font-size: 38px;
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px; height: 60px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    }
+
+    .logo-icon {
+      font-size: 30px;
+    }
+
+    header.pro-header h1 {
+      font-size: 36px;
       font-weight: 900;
-      letter-spacing: -0.5px;
+      letter-spacing: 1px;
       background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
       text-transform: uppercase;
+      text-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
 
-    p.subtitle {
-      color: var(--text-muted);
+    .header-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .location-tag {
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hotline-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      padding: 8px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+    }
+
+    .hotline-btn:hover {
+      background: rgba(0, 240, 255, 0.25);
+      border-color: #00f0ff;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .hotline-btn strong {
+      color: #00f0ff;
       font-size: 15px;
-      font-weight: 500;
       letter-spacing: 0.5px;
     }
 
-    p.subtitle span {
-      color: #fff;
-      font-weight: 700;
+    /* Chấm xanh nhấp nháy Trực Tuyến */
+    .pulse-dot {
+      width: 8px; height: 8px;
+      background-color: #00ff66;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00ff66;
+      animation: pulse 1.5s infinite;
     }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 255, 102, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+    }
+    /* ============================================= */
 
     /* GRID LAYOUT */
     .grid {
@@ -260,7 +331,7 @@
       </div>
       <h1>KHO ỨNG DỤNG ANDROID TV</h1>
       <div class="header-info">
-        <span class="location-tag"> Phú Thọ Mãi Đỉnh</span>
+        <span class="location-tag">📍 Phú Thọ Mãi Đỉnh</span>
         <a href="https://zalo.me/0972515368" class="hotline-btn">
           <span class="pulse-dot"></span>
           Hotline / Zalo: <strong>0972 515 368</strong>
