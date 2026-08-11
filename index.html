@@ -3,54 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KHO ỨNG DỤNG PRO - 0972 515 368</title>
+  <title>ANDROID TV APP</title>
   <style>
     :root {
-      --bg-dark: #0f1015;
-      --card-bg: rgba(26, 28, 35, 0.85);
-      --card-hover: rgba(36, 39, 49, 0.95);
-      --accent-color: #00e5ff;
-      --accent-gradient: linear-gradient(135deg, #00e5ff, #7000ff);
+      --bg-dark: #0a0b0e;
+      --card-bg: rgba(18, 20, 28, 0.85);
+      --card-hover: rgba(28, 32, 45, 0.95);
+      --accent-cyan: #00f0ff;
+      --accent-purple: #7000ff;
+      --accent-gradient: linear-gradient(135deg, #00f0ff 0%, #7000ff 100%);
       --text-main: #ffffff;
-      --text-muted: #8e95a5;
+      --text-muted: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.08);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-main);
-      padding: 30px 20px;
+      padding: 40px 20px;
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Khung chứa các SĐT trôi nổi */
+    /* Container SĐT trôi tự do */
     #floating-icons-container {
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
-      pointer-events: none; /* Không cản trở bấm nút */
+      pointer-events: none;
       z-index: 0;
     }
 
-    /* ĐỊNH DẠNG SĐT CẦU VỒNG LÒE LOẸT */
+    /* SĐT CẦU VỒNG GLOW */
     .floating-phone {
       position: absolute;
       font-weight: 900;
-      font-size: 22px;
-      letter-spacing: 1px;
+      font-size: 20px;
+      letter-spacing: 1.5px;
       white-space: nowrap;
       user-select: none;
       will-change: transform;
-      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff007f);
+      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00f0ff, #0000ff, #8b00ff, #ff007f);
       background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: rainbowGlow 3s ease infinite;
-      filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.8)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.6));
+      filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.6));
     }
 
     @keyframes rainbowGlow {
@@ -71,86 +73,74 @@
     .container {
       position: relative;
       z-index: 1;
-    }
-
-    /* Header */
-    header {
-      max-width: 1200px;
-      margin: 0 auto 35px auto;
-      text-align: center;
-      padding: 25px;
-      background: radial-gradient(circle at center, rgba(112,0,255,0.2) 0%, rgba(15,16,21,0) 70%);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(5px);
-      border-radius: 16px;
-    }
-
-    .badge-top {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid var(--accent-color);
-      color: var(--accent-color);
-      font-size: 12px;
-      font-weight: 700;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #ffffff, #a5b4fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
-    }
-
-    p.subtitle {
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    /* Grid layout */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 22px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* Card App */
+    /* HEADER */
+    header {
+      margin-bottom: 45px;
+      text-align: center;
+      padding: 35px 20px;
+      background: linear-gradient(180deg, rgba(20, 24, 38, 0.8) 0%, rgba(10, 11, 14, 0.4) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    p.subtitle span {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* GRID LAYOUT */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 24px;
+    }
+
+    /* CARD APP */
     .card {
       background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 24px;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(10px);
-      transition: all 0.25s ease-in-out;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .app-icon {
-      font-size: 28px;
-      background: rgba(255,255,255,0.05);
-      padding: 8px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .card::before {
@@ -159,27 +149,35 @@
       top: 0; left: 0; width: 100%; height: 3px;
       background: var(--accent-gradient);
       opacity: 0;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.3s ease;
     }
 
     .card:hover, .card:focus-within {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-6px);
       background: var(--card-hover);
-      border-color: rgba(0, 229, 255, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 229, 255, 0.2);
+      border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 240, 255, 0.15);
     }
 
     .card:hover::before, .card:focus-within::before {
       opacity: 1;
     }
 
-    .card-tag {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      margin-bottom: 4px;
-      letter-spacing: 0.5px;
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .app-icon {
+      font-size: 26px;
+      background: rgba(255, 255, 255, 0.03);
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
     }
 
     .card h3 {
@@ -191,10 +189,11 @@
     .card p {
       font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 22px;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
 
+    /* BUTTON STYLES */
     .btn {
       display: flex;
       align-items: center;
@@ -205,22 +204,23 @@
       color: #ffffff;
       text-decoration: none;
       font-weight: 700;
-      font-size: 15px;
-      border-radius: 10px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
-      transition: all 0.2s ease;
+      font-size: 14px;
+      border-radius: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(112, 0, 255, 0.35);
+      transition: all 0.25s ease;
       outline: none;
     }
 
     .btn:focus, .btn:hover {
-      background: linear-gradient(135deg, #00f0ff, #8010ff);
-      box-shadow: 0 0 25px rgba(0, 229, 255, 0.8);
+      background: linear-gradient(135deg, #00f0ff 0%, #8b00ff 100%);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.7);
       outline: 2px solid #ffffff;
       outline-offset: 2px;
     }
 
-    /* Trái tim bay khi di chuột */
+    /* Trái tim bay */
     .heart-particle {
       position: fixed;
       pointer-events: none;
@@ -237,11 +237,11 @@
 
     footer {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 60px;
       color: var(--text-muted);
       font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
     }
   </style>
 </head>
@@ -254,10 +254,18 @@
   <canvas id="fireworksCanvas"></canvas>
 
   <div class="container">
-    <header>
-      <span class="badge-top">Hệ Thống Tải Nhanh TV</span>
+    <header class="pro-header">
+      <div class="header-logo">
+        <span class="logo-icon">📺</span>
+      </div>
       <h1>KHO ỨNG DỤNG ANDROID TV</h1>
-      <p class="subtitle">Phú Thọ Mãi Đỉnh • Hotline / Zalo: 0972 515 368</p>
+      <div class="header-info">
+        <span class="location-tag"> Phú Thọ Mãi Đỉnh</span>
+        <a href="https://zalo.me/0972515368" class="hotline-btn">
+          <span class="pulse-dot"></span>
+          Hotline / Zalo: <strong>0972 515 368</strong>
+        </a>
+      </div>
     </header>
 
     <div class="grid">
@@ -266,13 +274,10 @@
       <div class="card">
         <div>
           <div class="card-header">
-            <span class="app-icon">📺</span>
-            <div>
-              <div class="card-tag">● Khuyên Dùng Cho Sony / TCL</div>
-              <h3>YouTube Cobalt</h3>
-            </div>
+            <div class="app-icon">📺</div>
+            <h3>YouTube Cobalt</h3>
           </div>
-          <p>Bản YouTube Tizen siêu nhẹ, chặn quảng cáo, phát mượt 4K, hỗ trợ điều khiển Remote hoàn hảo.</p>
+          <p>Kiến trúc Tizen Cobalt siêu nhẹ, tối ưu băng thông, phát mượt 4K HDR và tương thích tuyệt đối với Remote.</p>
         </div>
         <a class="btn" href="https://github.com/reisxd/TizenTubeCobalt/releases/download/v2.0.2/cobalt-arm.apk">TẢI VỀ NGAY</a>
       </div>
@@ -281,13 +286,10 @@
       <div class="card">
         <div>
           <div class="card-header">
-            <span class="app-icon">▶️</span>
-            <div>
-              <div class="card-tag">● Bản Bắt Buộc Có</div>
-              <h3>SmartTube Stable</h3>
-            </div>
+            <div class="app-icon">▶️</div>
+            <h3>SmartTube Stable</h3>
           </div>
-          <p>Ứng dụng YouTube chặn quảng cáo số 1 trên Android TV. Tự động bỏ qua đoạn nhà tài trợ.</p>
+          <p>Trải nghiệm YouTube chuẩn mực: Không quảng cáo, tự động bỏ qua SponsorBlock, hỗ trợ phát nền & 8K.</p>
         </div>
         <a class="btn" href="https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk">TẢI VỀ NGAY</a>
       </div>
@@ -296,13 +298,10 @@
       <div class="card">
         <div>
           <div class="card-header">
-            <span class="app-icon">🧪</span>
-            <div>
-              <div class="card-tag">● Thử Nghiệm</div>
-              <h3>SmartTube Beta</h3>
-            </div>
+            <div class="app-icon">🧪</div>
+            <h3>SmartTube Beta</h3>
           </div>
-          <p>Bản cập nhật tính năng mới nhất hàng tuần của SmartTube dành cho người thích trải nghiệm sớm.</p>
+          <p>Phiên bản thử nghiệm tính năng mới nhất hàng tuần, cập nhật thuật toán vá lỗi tức thì từ Developer.</p>
         </div>
         <a class="btn" href="https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk">TẢI VỀ NGAY</a>
       </div>
@@ -311,13 +310,10 @@
       <div class="card">
         <div>
           <div class="card-header">
-            <span class="app-icon">📡</span>
-            <div>
-              <div class="card-tag">● Công Cụ Tiện Ích</div>
-              <h3>Send Files to TV</h3>
-            </div>
+            <div class="app-icon">📡</div>
+            <h3>Send Files to TV</h3>
           </div>
-          <p>Truyền file APK, dữ liệu từ điện thoại Android/iOS sang TV cực nhanh qua mạng Wi-Fi.</p>
+          <p>Truyền tải tập tin APK và dữ liệu đa phương tiện từ Smartphone/PC sang Smart TV tốc độ cao qua Wi-Fi.</p>
         </div>
         <a class="btn" href="https://www.dropbox.com/scl/fi/THAY_LINK_DROPBOX.apk?rlkey=xyz&dl=1">TẢI VỀ NGAY</a>
       </div>
@@ -326,13 +322,10 @@
       <div class="card">
         <div>
           <div class="card-header">
-            <span class="app-icon">🚀</span>
-            <div>
-              <div class="card-tag">● Ứng Dụng Mới</div>
-              <h3>Tên Ứng Dụng Mới</h3>
-            </div>
+            <div class="app-icon">🚀</div>
+            <h3>Tên Ứng Dụng Mới</h3>
           </div>
-          <p>Mô tả chi tiết về ứng dụng hoặc các tính năng đặc sắc của bản APK này...</p>
+          <p>Mô tả chi tiết về ứng dụng, các tính năng đặc sắc hoặc bản MOD nâng cấp dành riêng cho Android TV...</p>
         </div>
         <a class="btn" href="https://www.dropbox.com/scl/fi/THAY_LINK_DROPBOX.apk?rlkey=xyz&dl=1">TẢI VỀ NGAY</a>
       </div>
@@ -344,29 +337,27 @@
     </footer>
   </div>
 
-  <!-- SCRIPT CƠ CHẾ SĐT "0972 515 368" TRÔI CẦU VỒNG & NẨY KHI CHẠM MÉP -->
+  <!-- SCRIPT SĐT "0972 515 368" TRÔI CẦU VỒNG & NẨY MÉP MÀN HÌNH -->
   <script>
     const phoneNumber = '📞 0972 515 368';
     const container = document.getElementById('floating-icons-container');
     const floatingObjects = [];
 
-    // Tạo 10 chữ số điện thoại trôi nổi
     for (let i = 0; i < 10; i++) {
       const el = document.createElement('div');
       el.className = 'floating-phone';
       el.innerText = phoneNumber;
       container.appendChild(el);
 
-      // Kích thước ngẫu nhiên từ 18px đến 30px
-      const randomSize = Math.floor(Math.random() * 12) + 18;
+      const randomSize = Math.floor(Math.random() * 10) + 18;
       el.style.fontSize = randomSize + 'px';
 
       floatingObjects.push({
         element: el,
         x: Math.random() * (window.innerWidth - 200),
         y: Math.random() * (window.innerHeight - 50),
-        vx: (Math.random() - 0.5) * 1.8, // Tốc độ trôi ngang
-        vy: (Math.random() - 0.5) * 1.8  // Tốc độ trôi dọc
+        vx: (Math.random() - 0.5) * 1.6,
+        vy: (Math.random() - 0.5) * 1.6
       });
     }
 
@@ -378,7 +369,6 @@
         obj.x += obj.vx;
         obj.y += obj.vy;
 
-        // Bật lại khi chạm mép màn hình
         if (obj.x <= 0 || obj.x >= w) obj.vx *= -1;
         if (obj.y <= 0 || obj.y >= h) obj.vy *= -1;
 
@@ -450,7 +440,7 @@
     }
 
     let particles = [];
-    const colors = ['#00e5ff', '#ff007f', '#7000ff', '#ffe600', '#00ff66'];
+    const colors = ['#00f0ff', '#ff007f', '#7000ff', '#ffe600', '#00ff66'];
 
     function createFirework() {
       const x = Math.random() * canvas.width;
@@ -462,7 +452,7 @@
     }
 
     function animate() {
-      ctx.fillStyle = 'rgba(15, 16, 21, 0.2)';
+      ctx.fillStyle = 'rgba(10, 11, 14, 0.2)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       if (Math.random() < 0.04) createFirework();
 
