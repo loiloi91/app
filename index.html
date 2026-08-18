@@ -34,8 +34,8 @@
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
-      pointer-events: none; /* Không cản trở bấm nút */
-      z-index: 1; /* NẰM TRÊN PHÁO HOA */
+      pointer-events: none;
+      z-index: 1;
     }
 
     /* ĐỊNH DẠNG SĐT CẦU VỒNG LÒE LOẸT */
@@ -67,12 +67,12 @@
       top: 0; left: 0;
       width: 100vw; height: 100vh;
       pointer-events: none;
-      z-index: 0; /* NẰM DƯỚI CÙNG */
+      z-index: 0;
     }
 
     .container {
       position: relative;
-      z-index: 2; /* NẰM TRÊN CÙNG */
+      z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -92,7 +92,6 @@
       overflow: hidden;
     }
 
-    /* Viền Neon phát sáng ở đáy Header */
     header.pro-header::after {
       content: '';
       position: absolute;
@@ -176,7 +175,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Chấm xanh nhấp nháy Trực Tuyến */
     .pulse-dot {
       width: 8px; height: 8px;
       background-color: #00ff66;
@@ -190,9 +188,7 @@
       70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 255, 102, 0); }
       100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
     }
-    /* ============================================= */
 
-    /* SECTION TITLE FOR PLATFORMS */
     .section-title {
       font-size: 22px;
       font-weight: 800;
@@ -207,11 +203,18 @@
       padding-left: 12px;
     }
 
-    /* GRID LAYOUT */
+    /* GRID LAYOUT - CỐ ĐỊNH 2 CỘT */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+    }
+
+    /* Tự động về 1 cột trên màn hình điện thoại nhỏ để dễ nhìn */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* CARD APP */
@@ -279,7 +282,6 @@
       margin-bottom: 24px;
     }
 
-    /* BUTTON STYLES */
     .btn {
       display: flex;
       align-items: center;
@@ -306,7 +308,6 @@
       outline-offset: 2px;
     }
 
-    /* Trái tim bay hiệu ứng chuột */
     .heart-particle {
       position: fixed;
       pointer-events: none;
@@ -321,29 +322,27 @@
       100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5) translateY(-60px); }
     }
 
-    /* Footer */
-    <footer>
-      <p>© Kho Ứng Dụng TV Chỉ sử dụng mục đích cá nhân • Tương thích với Android TV, Google TV, Tizen OS (Samsung), TV Box</p>
-    </footer>
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Khung chứa SĐT trôi tự do -->
   <div id="floating-icons-container"></div>
-
-  <!-- Canvas hiển thị Pháo hoa -->
   <canvas id="fireworksCanvas"></canvas>
 
-  <!-- Khung nội dung chính -->
   <div class="container">
     <header class="pro-header">
       <div class="header-logo">
         <span class="logo-icon">📺</span>
       </div>
-      <h1>KHO ỨNG DỤNG ANDROID TV </h1>
+      <h1>KHO ỨNG DỤNG ANDROID TV</h1>
       <div class="header-info">
-        <span class="location-tag"> Phú Thọ Mãi Đỉnh</span>
+        <span class="location-tag">Phú Thọ Mãi Đỉnh</span>
         <a href="https://zalo.me/0972515368" class="hotline-btn">
           <span class="pulse-dot"></span>
           Hotline / Zalo: <strong>0972 515 368</strong>
@@ -351,8 +350,7 @@
       </div>
     </header>
 
-    <!-- KHO ỨNG DỤNG ANDROID TV / GOOGLE TV / 
-    <div class="section-title">🤖 Kho ứng dụng Android TV / Google TV </div>
+    <div class="section-title">🤖 Kho ứng dụng Android TV / Google TV</div>
     <div class="grid">
 
       <!-- APP TizenTube -->
@@ -578,20 +576,17 @@
     </footer>
   </div>
 
-  <!-- SCRIPT CƠ CHẾ SĐT "0972 515 368" TRÔI CẦU VỒNG & NẨY MÉP MÀN HÌNH -->
   <script>
     const phoneNumber = ' 0972 515 368';
     const container = document.getElementById('floating-icons-container');
     const floatingObjects = [];
 
-    // Tạo 10 chữ số điện thoại trôi nổi
     for (let i = 0; i < 10; i++) {
       const el = document.createElement('div');
       el.className = 'floating-phone';
       el.innerText = phoneNumber;
       container.appendChild(el);
 
-      // Kích thước ngẫu nhiên từ 18px đến 30px
       const randomSize = Math.floor(Math.random() * 12) + 18;
       el.style.fontSize = randomSize + 'px';
 
@@ -599,8 +594,8 @@
         element: el,
         x: Math.random() * (window.innerWidth - 200),
         y: Math.random() * (window.innerHeight - 50),
-        vx: (Math.random() - 0.5) * 1.6, // Tốc độ trôi ngang
-        vy: (Math.random() - 0.5) * 1.6  // Tốc độ trôi dọc
+        vx: (Math.random() - 0.5) * 1.6,
+        vy: (Math.random() - 0.5) * 1.6
       });
     }
 
@@ -612,7 +607,6 @@
         obj.x += obj.vx;
         obj.y += obj.vy;
 
-        // Bật lại khi chạm mép màn hình
         if (obj.x <= 0 || obj.x >= w) obj.vx *= -1;
         if (obj.y <= 0 || obj.y >= h) obj.vy *= -1;
 
@@ -624,14 +618,12 @@
     animateFloatingPhones();
   </script>
 
-  <!-- SCRIPT HIỆU TRÁI TIM BAY KHI DI CHUỘT -->
   <script>
     const heartIcons = ['❤️', '💖', '✨', '💕', '💗'];
     let lastTime = 0;
 
     document.addEventListener('mousemove', function(e) {
       const now = Date.now();
-      // Giới hạn tần suất tạo trái tim để không bị giật lag
       if (now - lastTime < 50) return;
       lastTime = now;
 
@@ -649,7 +641,6 @@
     });
   </script>
 
-  <!-- SCRIPT HIỆU ỨNG PHÁO HOA NỀN -->
   <script>
     const canvas = document.getElementById('fireworksCanvas');
     const ctx = canvas.getContext('2d');
@@ -677,7 +668,7 @@
       update() {
         this.x += this.vx;
         this.y += this.vy;
-        this.vy += 0.03; // Lực hấp dẫn nhẹ
+        this.vy += 0.03;
         this.alpha -= this.decay;
       }
 
@@ -706,11 +697,9 @@
     }
 
     function animate() {
-      // Phủ mờ nhẹ tạo hiệu ứng đuôi pháo hoa
       ctx.fillStyle = 'rgba(10, 11, 14, 0.2)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Tự động bắn pháo hoa ngẫu nhiên
       if (Math.random() < 0.04) {
         createFirework();
       }
