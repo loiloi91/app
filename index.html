@@ -192,6 +192,21 @@
     }
     /* ============================================= */
 
+    /* SECTION TITLE FOR PLATFORMS */
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #00f0ff;
+      margin: 40px 0 20px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid #00f0ff;
+      padding-left: 12px;
+    }
+
     /* GRID LAYOUT */
     .grid {
       display: grid;
@@ -307,14 +322,9 @@
     }
 
     /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      color: var(--text-muted);
-      font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding-top: 20px;
-    }
+    <footer>
+      <p>© Kho Ứng Dụng TV Chỉ sử dụng mục đích cá nhân • Tương thích với Android TV, Google TV, Tizen OS (Samsung), TV Box</p>
+    </footer>
   </style>
 </head>
 <body>
@@ -331,7 +341,7 @@
       <div class="header-logo">
         <span class="logo-icon">📺</span>
       </div>
-      <h1>KHO ỨNG DỤNG ANDROID TV</h1>
+      <h1>KHO ỨNG DỤNG ANDROID TV & TIZEN</h1>
       <div class="header-info">
         <span class="location-tag"> Phú Thọ Mãi Đỉnh</span>
         <a href="https://zalo.me/0972515368" class="hotline-btn">
@@ -341,6 +351,24 @@
       </div>
     </header>
 
+    <!-- PHẦN 1: TIZEN OS (SAMSUNG TV) -->
+    <div class="section-title">📺 Dành cho Samsung Smart TV (Tizen OS)</div>
+    <div class="grid" style="margin-bottom: 40px;">
+      <!-- APP TizenTube -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="app-icon">🎬</div>
+            <h3>TizenTube</h3>
+          </div>
+          <p>Ứng dụng xem YouTube không quảng cáo tối ưu riêng cho dòng tivi Samsung chạy hệ điều hành Tizen OS.</p>
+        </div>
+        <a class="btn" href="https://github.com/TizenTube/TizenTube" target="_blank" rel="noopener noreferrer">TẢI TỪ GITHUB</a>
+      </div>
+    </div>
+
+    <!-- PHẦN 2: ANDROID TV / GOOGLE TV -->
+    <div class="section-title">🤖 Kho ứng dụng Android TV / Google TV / TV Box</div>
     <div class="grid">
 
       <!-- APP 1: DL Store -->
@@ -550,7 +578,7 @@
     </div>
 
     <footer>
-      <p>© Kho Ứng Dụng TV Chỉ sử dụng mục đích cá nhân • Tương thích với Android TV, Google TV, TV Sony, Xiaomi, TCL, TV Box</p>
+      <p>© Kho Ứng Dụng TV Chỉ sử dụng mục đích cá nhân • Tương thích với Android TV, Google TV, Tizen OS (Samsung), TV Box</p>
     </footer>
   </div>
 
